@@ -74,11 +74,25 @@ export const content = {
     // ============================================
     // Replace the placeholder text with your own words.
     // Line breaks are preserved. Use \n for new lines.
-    body: `[Your letter goes here]
+    body: `My Vanilla,
 
-Write from the heart.
-She'll read every word.
-Make it count.`,
+Happy 1 month of us! ❤️
+
+It feels so special to write this. I still can't believe it has already been one whole month since you officially became mine and I became yours.
+
+This one month has been full of random talks, good laughs, long calls, silly fights, emotional moments, cute good mornings and good nights, and a lot of “I love you”.
+
+Every single moment with you has meant something to me.
+
+Thank you for coming into my life and making it so much better. You make the ordinary days feel special.
+
+You are my peace, my happiness and my favourite feeling.
+
+I promise to always be there for you, to understand you, support you, take care of you and love you more and more every single day.
+
+I can't wait to make more memories together.
+
+Here's to many more months and years with you, Mishti-dehi. ❤️`,
     signature: '— Pituuu',
   },
 
