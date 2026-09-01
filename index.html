@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#06060f" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>For You, Vanilla 🌙</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/src/styles/main.css" />
+</head>
+<body>
+  <!-- Star field canvas (persistent background) -->
+  <canvas id="starfield"></canvas>
+
+  <!-- Moon element (persistent, controlled by scenes) -->
+  <div id="moon" aria-label="Moon">
+    <div class="moon-glow"></div>
+    <div class="moon-surface"></div>
+  </div>
+
+  <!-- Scene container (sections render here) -->
+  <div id="scene-container" aria-live="polite"></div>
+
+  <!-- Audio toggle -->
+  <button id="audio-toggle" class="audio-btn" aria-label="Toggle music" title="Toggle music">
+    <svg class="audio-icon audio-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+      <path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/>
+    </svg>
+    <svg class="audio-icon audio-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+      <line x1="23" y1="9" x2="17" y2="15"/>
+      <line x1="17" y1="9" x2="23" y2="15"/>
+    </svg>
+  </button>
+
+  <!-- Navigation Controls (Skip / Back / Chapter jump) -->
+  <nav id="nav-controls" class="nav-controls" aria-label="Story Navigation">
+    <button id="btn-prev" class="nav-btn nav-btn-prev" aria-label="Previous chapter" title="Previous chapter">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M15 18l-6-6 6-6"/>
+      </svg>
+      <span>Back</span>
+    </button>
+    
+    <div id="chapter-dots" class="chapter-dots" aria-label="Chapters"></div>
+
+    <button id="btn-next" class="nav-btn nav-btn-next" aria-label="Next or skip chapter" title="Next / Skip">
+      <span>Skip</span>
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 18l6-6-6-6"/>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Progress indicator -->
+  <div id="progress-bar">
+    <div id="progress-fill"></div>
+  </div>
+
+  <!-- Tap to begin overlay -->
+  <div id="tap-overlay" role="button" tabindex="0" aria-label="Tap to begin the experience">
+    <div class="tap-content">
+      <div class="tap-moon-icon">🌙</div>
+      <p class="tap-text">tap to begin</p>
+    </div>
+  </div>
+
+  <!-- Audio element -->
+  <audio id="bg-audio" loop preload="auto">
+    <source src="./audio/leberch-romantic-584478.mp3" type="audio/mpeg" />
+    <source src="./audio/our-song.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
